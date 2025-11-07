@@ -2,10 +2,10 @@ import axios from "axios";
 
 // Configuration
 const API_BASE = process.env.API_BASE || "http://127.0.0.1:8000";
-const SESSION_ID = process.env.SESSION_ID || "4a7348990949f13ff78c17d7f090034c";
+const SESSION_ID = process.env.SESSION_ID || "YOUR_SESSION_ID_HERE";
 // Use external image URL to avoid base64 issues
 const IMAGE_URL = process.env.IMAGE_URL ||
-  "http://a.rdis.tssoft.top:15041/save/result/10down1-0.5384468772194603-[%20%20%20%20-33.833%20%20%20%20%20%208.4583]-[%20%20%20%20-67.667%20%20%20%20%20-21.146]-37fe1478e05f469aaa70f0dc02475ab8.jpg";
+  "https://picsum.photos/800/600"; // 示例图片 URL，请替换为你自己的图片
 
 async function main() {
   const messages = [

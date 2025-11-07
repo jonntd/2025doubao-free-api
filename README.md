@@ -25,9 +25,6 @@
   * [获取 SessionID](#获取-sessionid)
   * [多账号接入](#多账号接入)
 * [部署方式](#部署方式)
-  * [原生部署（推荐）](#原生部署推荐)
-  * [Docker 部署](#docker-部署)
-  * [Docker-compose 部署](#docker-compose-部署)
 * [接口使用](#接口使用)
   * [文本对话](#文本对话)
   * [图文对话（新增）](#图文对话新增)
@@ -76,18 +73,16 @@ Authorization: Bearer sessionid1,sessionid2,sessionid3
 
 ## 📦 部署方式
 
-### 原生部署（推荐）
-
 **环境要求**：Node.js 16+
 
-#### 1. 克隆项目
+### 1. 克隆项目
 
 ```bash
 git clone https://github.com/1994qrq/2025doubao-free-api.git
 cd 2025doubao-free-api
 ```
 
-#### 2. 安装依赖
+### 2. 安装依赖
 
 ```bash
 npm install
@@ -95,7 +90,7 @@ npm install
 yarn install
 ```
 
-#### 3. 编译构建
+### 3. 编译构建
 
 ```bash
 npm run build
@@ -103,7 +98,7 @@ npm run build
 
 构建完成后会生成 `dist` 目录。
 
-#### 4. 启动服务
+### 4. 启动服务
 
 **方式一：直接启动**
 
@@ -131,53 +126,6 @@ pm2 stop doubao-free-api
 ```
 
 服务默认运行在 `http://localhost:8000`
-
----
-
-### Docker 部署
-
-```bash
-docker run -it -d --init --name doubao-free-api -p 8000:8000 -e TZ=Asia/Shanghai vinlic/doubao-free-api:latest
-```
-
-**常用命令**：
-
-```bash
-# 查看日志
-docker logs -f doubao-free-api
-
-# 重启服务
-docker restart doubao-free-api
-
-# 停止服务
-docker stop doubao-free-api
-```
-
----
-
-### Docker-compose 部署
-
-创建 `docker-compose.yml` 文件：
-
-```yaml
-version: '3'
-
-services:
-  doubao-free-api:
-    container_name: doubao-free-api
-    image: vinlic/doubao-free-api:latest
-    restart: always
-    ports:
-      - "8000:8000"
-    environment:
-      - TZ=Asia/Shanghai
-```
-
-启动服务：
-
-```bash
-docker-compose up -d
-```
 
 ---
 
